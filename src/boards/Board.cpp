@@ -2,6 +2,7 @@
 #include "Board.h"
 #include "Epdiy.h"
 #include "Lilygo_t5_47.h"
+#include "Lilygo_t5_s3_pro.h"
 #include "M5Paper.h"
 #include <SPIFFS.h>
 #include <SDCard.h>
@@ -12,6 +13,9 @@ Board *Board::factory()
 {
 #ifdef BOARD_TYPE_LILIGO_T5_47
   return new Lilygo_t5_47();
+#endif
+#ifdef BOARD_TYPE_LILYGO_T5_S3_PRO
+  return new Lilygo_t5_s3_pro();
 #endif
 #ifdef BOARD_TYPE_EPDIY
   return new Epdiy();
